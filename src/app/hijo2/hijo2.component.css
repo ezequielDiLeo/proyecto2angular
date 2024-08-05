@@ -1,0 +1,26 @@
+
+.cont-input1{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width: 365px;
+    height: 20px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+button{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+    background-color: rgb(103, 92, 122);
+}

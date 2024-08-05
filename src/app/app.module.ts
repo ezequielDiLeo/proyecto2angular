@@ -3,14 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ModalButonsComponent } from './modal-butons/modal-butons.component';
+import { Hijo1Component } from './hijo1/hijo1.component';
+import { Hijo2Component } from './hijo2/hijo2.component';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ModalButonsComponent,
+    Hijo1Component,
+    Hijo2Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

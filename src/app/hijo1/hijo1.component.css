@@ -1,0 +1,20 @@
+
+.cont-boton{
+    margin: 5px;
+    display: flex;
+    width: 100%;
+}
+
+button{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+    background-color: rgb(103, 92, 122);
+}
