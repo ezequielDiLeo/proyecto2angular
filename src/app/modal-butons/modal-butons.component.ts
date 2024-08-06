@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-modal-butons',
   templateUrl: './modal-butons.component.html',
   styleUrls: ['./modal-butons.component.css']
 })
-export class ModalButonsComponent implements OnInit{
-
-  ngOnInit(): void {
-    this.buttons
-  }
+export class ModalButonsComponent {
 
   public buttons = {
     accion: 'abrir modal',

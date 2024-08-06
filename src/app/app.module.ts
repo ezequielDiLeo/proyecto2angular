@@ -7,6 +7,7 @@ import { ModalButonsComponent } from './modal-butons/modal-butons.component';
 import { Hijo1Component } from './hijo1/hijo1.component';
 import { Hijo2Component } from './hijo2/hijo2.component';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

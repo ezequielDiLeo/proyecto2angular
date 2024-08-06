@@ -1,4 +1,4 @@
 <div class="cont-general">
     <app-hijo1 [buttons]="buttons" (abrirModal)="toggleModal()"></app-hijo1>
-    <app-hijo2 *ngIf="modal"></app-hijo2>
+    <app-hijo2 *ngIf="modal" (abrirModal)="toggleModal()"></app-hijo2>
 </div>
