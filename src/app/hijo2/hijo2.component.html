@@ -2,29 +2,7 @@
 <div class="modal">
   <div class="modal-content">
     <span class="close" (click)="toggleModal()">x</span>
-      <form (ngSubmit)="submitForm()" [formGroup]="form">
-        <div class="name">
-          <input type="text" formControlName="Nombre" name="Nombre" placeholder="Ingresa tu nombre" required />
-          <div class="text-red-600 font-semibold" *ngIf="form.controls['Nombre'].touched && form.controls['Nombre'].invalid"> 
-            <span *ngIf="form.controls['Nombre'].errors?.['required']" > Nombre requerido</span> 
-            <span *ngIf="form.controls['Nombre'].errors?.['minlength']" > Nombre demasiado corto</span> 
-          </div>
-        </div>
-        <div class="apellido">
-          <input type="text" formControlName="Apellido" name="Apellido" placeholder="Ingresa tu apellido" required />
-          <div class="text-red-600 font-semibold" *ngIf="form.controls['Apellido'].invalid && form.controls['Apellido'].touched">
-            <span *ngIf="form.controls['Apellido'].errors?.['required']" > Apellido requerido</span> 
-            <span *ngIf="form.controls['Apellido'].errors?.['minlength']" > Apellido demasiado corto</span> 
-          </div>
-        </div>
-        <div class="email">
-          <input type="email" formControlName="email" name="email" placeholder="Correo Electrónico" required />
-          <div class="text-red-600 font-semibold" *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
-            <span *ngIf="form.controls['email'].errors?.['required']" > Email requerido</span> 
-            <span *ngIf="form.controls['email'].errors?.['email']" > email invalido <span class="text-gray-500">example: abs@gmail.com</span></span> 
-          </div>
-        </div>
+        <app-data-table />
         <button type="submit">Submit</button>
-      </form>
     </div>
   </div>
