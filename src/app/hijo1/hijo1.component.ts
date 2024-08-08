@@ -18,7 +18,6 @@ export class Hijo1Component {
 
   openModal(){
     this.abrirModal.emit();
-    console.log(this.abrirModal)
   }
 
 }

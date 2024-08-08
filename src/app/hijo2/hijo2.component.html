@@ -1,30 +1,65 @@
 
+
 <div class="modal">
-  <div class="modal-content">
+  <div id="modal-content" class="modal-content">
     <span class="close" (click)="toggleModal()">x</span>
-      <form (ngSubmit)="submitForm()" [formGroup]="form">
-        <div class="name">
-          <input type="text" formControlName="Nombre" name="Nombre" placeholder="Ingresa tu nombre" required />
-          <div class="text-red-600 font-semibold" *ngIf="form.controls['Nombre'].touched && form.controls['Nombre'].invalid"> 
-            <span *ngIf="form.controls['Nombre'].errors?.['required']" > Nombre requerido</span> 
-            <span *ngIf="form.controls['Nombre'].errors?.['minlength']" > Nombre demasiado corto</span> 
-          </div>
+    <form (ngSubmit)="submitForm()" [formGroup]="form">
+      
+      <div class="name">
+        <input type="text" formControlName="Nombre" placeholder="Ingresa tu nombre" required />
+        <div class="text-red-600 font-semibold" *ngIf="form.controls['Nombre'].touched && form.controls['Nombre'].invalid">
+          <span *ngIf="form.controls['Nombre'].errors?.['required']">Nombre requerido</span>
+          <span *ngIf="form.controls['Nombre'].errors?.['minlength']">Nombre demasiado corto</span>
         </div>
-        <div class="apellido">
-          <input type="text" formControlName="Apellido" name="Apellido" placeholder="Ingresa tu apellido" required />
-          <div class="text-red-600 font-semibold" *ngIf="form.controls['Apellido'].invalid && form.controls['Apellido'].touched">
-            <span *ngIf="form.controls['Apellido'].errors?.['required']" > Apellido requerido</span> 
-            <span *ngIf="form.controls['Apellido'].errors?.['minlength']" > Apellido demasiado corto</span> 
-          </div>
+      </div>
+
+      <div class="apellido">
+        <input type="text" formControlName="Apellido" placeholder="Ingresa tu apellido" required />
+        <div class="text-red-600 font-semibold" *ngIf="form.controls['Apellido'].invalid && form.controls['Apellido'].touched">
+          <span *ngIf="form.controls['Apellido'].errors?.['required']">Apellido requerido</span>
+          <span *ngIf="form.controls['Apellido'].errors?.['minlength']">Apellido demasiado corto</span>
         </div>
-        <div class="email">
-          <input type="email" formControlName="email" name="email" placeholder="Correo Electrónico" required />
-          <div class="text-red-600 font-semibold" *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
-            <span *ngIf="form.controls['email'].errors?.['required']" > Email requerido</span> 
-            <span *ngIf="form.controls['email'].errors?.['email']" > email invalido <span class="text-gray-500">example: abs@gmail.com</span></span> 
-          </div>
+      </div>
+
+      <div class="date">
+        <span class="span-input">Fecha de nacimiento: </span><br>
+        <input type="" formControlName="date" mask="d0/M0/0000" placeholder="xx/xx/xxxx" />
+        <div class="text-red-600 font-semibold" *ngIf="form.controls['date'].touched && form.controls['date'].invalid">
+          <span *ngIf="form.controls['Nombre'].errors?.['required']">dato requerido</span>
         </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+      </div>
+
+      <div class="email">
+        <span class="span-input">Correo Electrónico: </span><br>
+        <input type="email" formControlName="email" placeholder="mail&#64;gmail.com" required />
+        <div class="text-red-600 font-semibold" *ngIf="form.controls['email'].invalid && form.controls['email'].touched">
+          <span *ngIf="form.controls['email'].errors?.['required']">Email requerido</span>
+          <span *ngIf="form.controls['email'].errors?.['email']">Email inválido <span class="text-gray-500">example: mail&#64;gmail.com</span></span>
+        </div>
+      </div>
+      
+      <div class="separator">
+        <span class="span-input"> Cantidad de dinero a solicitar: </span><br>
+        <input type='text' formControlName="separator" mask="separator.2" [leadZero]="true" placeholder="example: 0 55 / 55 55 55">
+        <div class="text-red-600 font-semibold" *ngIf="form.controls['separator'].touched && form.controls['separator'].invalid">
+          <span *ngIf="form.controls['separator'].errors?.['required']">dato requerido</span>
+        </div>
+      </div>
+
+      <div class="dot">
+        <span class="span-input">indique nuevamente</span><br>
+        <input type='text' mask="separator" thousandSeparator="." placeholder="example: 0.55 / 55.55.55"/>  
+        <div class="text-red-600 font-semibold" *ngIf="form.controls['dot'].touched && form.controls['dot'].invalid">
+          <span *ngIf="form.controls['dot'].errors?.['dot']">dato requerido</span>
+        </div>
+      </div>
+
+      <div class="tofixed">
+        <span class="span-input">separator.3</span><br>
+        <input type="text" mask="separator.3" [outputTransformFn]="toFixed" />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
   </div>
+</div>
